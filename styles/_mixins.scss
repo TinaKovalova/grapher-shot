@@ -1,0 +1,59 @@
+//Percent
+@function toPercent($px, $from: 100) {
+    $result: math.div($px, $from) * 100%;
+    @return $result;
+}
+//VW
+@function toVW($px, $from: 100) {
+    $result: math.div($px, $from) * 100vw;
+    @return $result;
+}
+//REM
+@function toRem($px, $current: 16) {
+    $result: math.div($px, $current) + rem;
+    @return $result;
+}
+//EM
+@function toEm($px, $current: 16) {
+    $result: math.div($px, $current) + em;
+    @return $result;
+}
+
+// pagination bullet
+
+// @mixin pagination-bullet {
+//     width: toRem(11);
+//     height: toRem(11);
+//     --swiper-pagination-bullet-horizontal-gap: 1.25rem;
+//     border: toRem(1) solid $greenColor;
+//     background-color: $greenColor;
+//     opacity: 1;
+// }
+// @mixin pagination-bullet-active {
+//     background-color: transparent;
+// }
+
+// @mixin underline-hover($color, $transition) {
+//     position: relative;
+//     will-change: color;
+//     transition: color $transition;
+//     &::after {
+//         content: "";
+//         position: absolute;
+//         top: 100%;
+//         left: 0;
+//         width: 0;
+//         height: toRem(1);
+//         background-color: $color;
+//         will-change: width;
+//         transition: width $transition;
+//     }
+//     @media (any-hover: hover) {
+//         &:hover {
+//             color: $color;
+//             &::after {
+//                 width: 100%;
+//             }
+//         }
+//     }
+// }
