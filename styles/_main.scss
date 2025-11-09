@@ -1,0 +1,112 @@
+.hero {
+    position: relative;
+    height: 100vh;
+    // overflow-y: auto;
+    padding-block: toRem(100);
+    &::before {
+        content: "";
+        position: absolute;
+        inset-inline-start: 0;
+        inset-block-start: 0;
+        width: 50%;
+        height: 100%;
+        background-color: $brandColor-100;
+    }
+    // .hero__backgroung
+
+    &__backgroung {
+        max-width: toRem(921);
+        aspect-ratio: 921 / 851;
+        position: absolute;
+        inset-block-end: 0;
+        inset-inline-start: 50%;
+        transform: translateX(-50%);
+    }
+    // .hero__container
+
+    &__container {
+        position: relative;
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+
+    // .hero__content
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: stretch;
+    }
+
+    // .hero__header
+
+    &__header {
+        width: 100%;
+        &:not(:last-child) {
+            margin-block-end: toRem(53);
+        }
+        & .section-header__title {
+            @include adaptiveValue("font-size", 90, 50);
+            max-width: 4.95em; /* 445/90 */
+            & span {
+                display: block;
+                text-align: end;
+            }
+            &:not(:last-child) {
+                margin-block-end: toRem(55);
+            }
+        }
+        & .section-header__text {
+            margin-inline-start: auto;
+            @include adaptiveValue("font-size", 22, 18);
+            max-width: 14.82em;
+        }
+        @media (min-width: toEm(992)) {
+            & .section-header__title {
+                &:not(:last-child) {
+                    margin-block-end: toRem(115);
+                }
+            }
+            &:not(:last-child) {
+                margin-block-end: toRem(83);
+            }
+        }
+    }
+
+    // .hero__button
+
+    &__button {
+        font-size: toRem(26);
+        border-width: toRem(1.5);
+        border-left-color: $mainTextColor;
+        border-top-color: $mainTextColor;
+        border-bottom-color: $mainTextColor;
+        min-width: toRem(238);
+        position: relative;
+        &::after,
+        &::before {
+            content: "";
+            width: toRem(1.5);
+            height: 33.3%;
+            background-color: $mainTextColor;
+            position: absolute;
+        }
+        &::before {
+            inset-inline-end: toRem(-1);
+            inset-block-start: 0;
+        }
+        &::after {
+            inset-inline-end: toRem(-1);
+            inset-block-end: 0;
+        }
+    }
+
+    // .hero__social
+
+    &__social {
+        position: absolute;
+    }
+}

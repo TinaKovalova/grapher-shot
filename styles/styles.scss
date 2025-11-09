@@ -23,8 +23,8 @@ body {
 }
 
 [class$="__container"] {
-    max-width: toRem(1220); //1200
-    padding-inline: toRem(10);
+    max-width: toRem($maxWidthContainer); //1200
+    padding-inline: toRem($containerPadding);
     margin: 0 auto;
 }
 

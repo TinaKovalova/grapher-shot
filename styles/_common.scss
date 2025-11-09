@@ -1,0 +1,41 @@
+.button {
+    text-transform: capitalize;
+    font-weight: 500;
+    padding-inline: toRem(15);
+    padding-block: toRem(19);
+    border: toRem(1) solid transparent;
+}
+.social {
+    // .social__item
+
+    &__item {
+    }
+
+    // .social__link
+
+    &__link {
+    }
+
+    // .social__link-icon
+
+    &__link-icon {
+    }
+}
+.section-header {
+    // .section-header__title
+
+    &__title {
+        font-family: "Cormorant", serif;
+        text-transform: uppercase;
+        color: #ffffff;
+        @include adaptiveValue("font-size", 70, 30);
+    }
+
+    // .section-header__text
+
+    &__text {
+        @include adaptiveValue("font-size", 20, 16);
+        text-transform: capitalize;
+        line-height: 1.6;
+    }
+}
