@@ -8,6 +8,8 @@
     transition-duration: 0.4s;
 }
 .social {
+    display: flex;
+
     // .social__item
 
     &__item {
@@ -16,11 +18,22 @@
     // .social__link
 
     &__link {
+        @media (any-hover: hover) {
+            &:hover {
+                & .social__link-icon {
+                    fill: #ffffff;
+                }
+            }
+        }
     }
 
     // .social__link-icon
 
     &__link-icon {
+        width: toRem(30);
+        height: toRem(26);
+        fill: $brandColor-100;
+        transition: fill 0.4s ease-out;
     }
 }
 .section-header {
