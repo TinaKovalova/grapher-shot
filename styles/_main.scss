@@ -187,3 +187,89 @@
         }
     }
 }
+
+.about {
+    // .about__container
+
+    &__container {
+        padding-block-end: toRem(68);
+        @include adaptiveValue("padding-block-start", 152, 50);
+    }
+    &__header-wrapper {
+        // &::after {
+        //     content: "";
+        //     margin-inline-start: toRem(117);
+        //     margin-block-start: toRem(-10);
+        //     height: toRem(167.5);
+        //     width: toRem(32);
+        //     background: url("../images/icons/arrow-long.svg") center/contain no-repeat;
+        // }
+    }
+    &__scroll-icon {
+        width: toRem(30);
+        height: toRem(170);
+        fill: $brandColor-100;
+        margin-inline-start: toRem(117);
+        margin-block-start: toRem(-10);
+    }
+    // .about__header
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        gap: toRem(30) toRem(15);
+        // .section-header__title
+
+        & .section-header__title {
+        }
+
+        // .section-header__text
+
+        & .section-header__text {
+            max-width: toRem(512);
+        }
+        @media (min-width: toEm(992)) {
+            padding-inline-end: toRem(30);
+        }
+    }
+
+    // .about__counter
+
+    &__counter {
+    }
+}
+
+.counter-about {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    row-gap: toRem(30);
+    @include adaptiveValue("column-gap", 117, 20);
+    color: #ffffff;
+    text-align: end;
+    text-transform: capitalize;
+    padding-block: toRem(16);
+    // .counter-about__item
+    &__item {
+        padding-inline-end: toRem(37);
+        padding-block: toRem(29);
+        border-inline-end: toRem(1.5) solid #ffffff;
+    }
+
+    // .counter-about__item-data
+
+    &__item-data {
+        font-family: "Cormorant", serif;
+        @include adaptiveValue("font-size", 60, 20);
+        &:not(:last-child) {
+            margin-block-end: toRem(21);
+        }
+    }
+
+    // .counter-about__item-data-name
+
+    &__item-data-name {
+        @include adaptiveValue("font-size", 24, 16);
+    }
+}
