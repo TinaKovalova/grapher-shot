@@ -94,6 +94,7 @@
     // .menu__link
 
     &__link {
+        will-change: color;
         transition: color 0.3s ease-out;
         @media (any-hover: hover) {
             &:hover {

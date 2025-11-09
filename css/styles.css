@@ -129,6 +129,10 @@ body {
   padding-inline: 0.9375rem;
   padding-block: 1.1875rem;
   border: 0.0625rem solid transparent;
+  -webkit-transition-timing-function: ease-out;
+          transition-timing-function: ease-out;
+  -webkit-transition-duration: 0.4s;
+          transition-duration: 0.4s;
 }
 
 .section-header__title {
@@ -313,6 +317,7 @@ body {
       flex-shrink: 0;
 }
 .menu__link {
+  will-change: color;
   -webkit-transition: color 0.3s ease-out;
   transition: color 0.3s ease-out;
 }
@@ -363,17 +368,28 @@ body {
   height: 100vh;
   padding-block: 6.25rem;
 }
-.hero::before {
+.hero::before, .hero::after {
   content: "";
   position: absolute;
-  inset-inline-start: 0;
   inset-block-start: 0;
-  width: 50%;
+  inset-inline-start: 0;
   height: 100%;
+}
+.hero::before {
+  width: 50%;
   background-color: #233942;
+}
+.hero::after {
+  width: 100%;
+}
+@media (max-width: 47.99875em) {
+  .hero::after {
+    backdrop-filter: brightness(50%);
+  }
 }
 .hero__backgroung {
   max-width: 57.5625rem;
+  max-height: 90%;
   aspect-ratio: 921/851;
   position: absolute;
   inset-block-end: 0;
@@ -384,7 +400,8 @@ body {
 }
 .hero__container {
   position: relative;
-  min-height: 100%;
+  z-index: 1;
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -451,6 +468,12 @@ body {
   -webkit-margin-after: 3.4375rem;
           margin-block-end: 3.4375rem;
 }
+@media (min-width: 62em) {
+  .hero__header .section-header__title:not(:last-child) {
+    -webkit-margin-after: 7.1875rem;
+            margin-block-end: 7.1875rem;
+  }
+}
 .hero__header .section-header__text {
   -webkit-margin-start: auto;
           margin-inline-start: auto;
@@ -478,11 +501,12 @@ body {
     font-size: 1.125rem;
   }
 }
-@media (min-width: 62em) {
-  .hero__header .section-header__title:not(:last-child) {
-    -webkit-margin-after: 7.1875rem;
-            margin-block-end: 7.1875rem;
+@media (max-width: 47.99875em) {
+  .hero__header .section-header__text {
+    color: #ffffff;
   }
+}
+@media (min-width: 62em) {
   .hero__header:not(:last-child) {
     -webkit-margin-after: 5.1875rem;
             margin-block-end: 5.1875rem;
@@ -496,6 +520,9 @@ body {
   border-bottom-color: #898d92;
   min-width: 14.875rem;
   position: relative;
+  will-change: color, border-color;
+  -webkit-transition-property: color, border-color;
+  transition-property: color, border-color;
 }
 .hero__button::after, .hero__button::before {
   content: "";
@@ -503,14 +530,25 @@ body {
   height: 33.3%;
   background-color: #898d92;
   position: absolute;
+  -webkit-transition: background-color 0.4s ease-out;
+  transition: background-color 0.4s ease-out;
 }
 .hero__button::before {
-  inset-inline-end: -0.0625rem;
+  inset-inline-end: -0.09375rem;
   inset-block-start: 0;
 }
 .hero__button::after {
-  inset-inline-end: -0.0625rem;
+  inset-inline-end: -0.09375rem;
   inset-block-end: 0;
+}
+@media (any-hover: hover) {
+  .hero__button:hover {
+    color: #ffffff;
+    border-color: #ffffff;
+  }
+  .hero__button:hover::before, .hero__button:hover::after {
+    background-color: #ffffff;
+  }
 }
 .hero__social {
   position: absolute;
