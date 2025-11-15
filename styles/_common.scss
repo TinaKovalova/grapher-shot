@@ -1,5 +1,4 @@
 .button {
-    text-transform: capitalize;
     font-weight: 500;
     padding-inline: toRem(15);
     padding-block: toRem(19);
@@ -45,7 +44,6 @@
 
     &__text {
         @include adaptiveValue("font-size", 20, 16);
-        text-transform: capitalize;
         line-height: 1.6;
     }
 }

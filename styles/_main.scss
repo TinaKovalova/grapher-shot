@@ -309,7 +309,6 @@
     @include adaptiveValue("column-gap", 117, 20);
     color: #ffffff;
     text-align: end;
-    text-transform: capitalize;
     padding-block: toRem(16);
     @media (min-width: toEm(540)) {
         justify-content: center;
@@ -339,5 +338,99 @@
 
     &__item-data-name {
         @include adaptiveValue("font-size", 24, 16);
+    }
+}
+
+.portfolio {
+    @include adaptiveValue("padding-block-start", 76, 40);
+    @include adaptiveValue("padding-block-end", 93, 40);
+    // .portfolio__container
+
+    &__container {
+        &:not(:last-child) {
+            margin-block-end: toRem(40);
+        }
+        @media (min-width: toRem(992)) {
+            &:not(:last-child) {
+                margin-block-end: toRem(107);
+            }
+        }
+    }
+
+    // .portfolio__header
+
+    &__header {
+        text-align: end;
+        &:not(:last-child) {
+            margin-block-end: toRem(32);
+        }
+        @media (min-width: toRem(992)) {
+            &:not(:last-child) {
+                margin-block-end: toRem(56);
+            }
+        }
+    }
+
+    // .portfolio__collection
+
+    &__collection {
+        height: toRem(705);
+        overflow-x: auto;
+        scrollbar-color: $mainTextColor $backgroundColor;
+        scrollbar-width: thin;
+    }
+    &__collection-content {
+        margin: 0 auto;
+        width: fit-content;
+        max-height: 100%;
+        display: grid;
+        gap: toRem(16);
+        grid-template-columns: minmax(toRem(238), toRem(301));
+        grid-auto-columns: minmax(toRem(238), toRem(301));
+        grid-template-rows: repeat(3, minmax(toRem(178), 33%));
+        grid-auto-flow: column dense;
+    }
+
+    // .portfolio__collection-item
+
+    &__collection-item {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: top;
+    }
+}
+
+.filter-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: toRem(5) toRem(25);
+    @media (min-width: toRem(992)) {
+        gap: toRem(10) toRem(69);
+    }
+    // .filter-form__label
+
+    &__label {
+        position: relative;
+        font-family: "Cormorant", serif;
+        font-size: toRem(30);
+        font-weight: 500;
+        line-height: 1.6;
+        &:has(:checked) {
+            color: #ffffff;
+            text-shadow: 0 0 toRem(2) #ffffff;
+        }
+    }
+    &__checkbox {
+        border: 0;
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        inset-block-start: 0;
+        inset-inline-start: 0;
+        width: 1px;
     }
 }

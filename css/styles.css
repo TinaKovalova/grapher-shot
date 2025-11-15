@@ -97,6 +97,7 @@ body {
   font-family: "Lato", sans-serif;
   color: #898d92;
   background-color: #0d0f11;
+  text-transform: capitalize;
 }
 
 .wrapper {
@@ -124,7 +125,6 @@ body {
 }
 
 .button {
-  text-transform: capitalize;
   font-weight: 500;
   padding-inline: 0.9375rem;
   padding-block: 1.1875rem;
@@ -181,7 +181,6 @@ body {
   }
 }
 .section-header__text {
-  text-transform: capitalize;
   line-height: 1.6;
 }
 @media (min-width: 75em) {
@@ -904,7 +903,6 @@ body {
   row-gap: 1.875rem;
   color: #ffffff;
   text-align: end;
-  text-transform: capitalize;
   padding-block: 1rem;
 }
 @media (min-width: 75em) {
@@ -1008,4 +1006,146 @@ body {
   .counter-about__item-data-name {
     font-size: 1rem;
   }
+}
+
+@media (min-width: 75em) {
+  .portfolio {
+    -webkit-padding-before: 4.75rem;
+            padding-block-start: 4.75rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 75em) {
+  @supports (padding-block-start: clamp( 2.5rem , 1.6818181818rem  +  4.0909090909vw , 4.75rem )) {
+    .portfolio {
+      -webkit-padding-before: clamp( 2.5rem , 1.6818181818rem  +  4.0909090909vw , 4.75rem );
+              padding-block-start: clamp( 2.5rem , 1.6818181818rem  +  4.0909090909vw , 4.75rem );
+    }
+  }
+  @supports not (padding-block-start: clamp( 2.5rem , 1.6818181818rem  +  4.0909090909vw , 4.75rem )) {
+    .portfolio {
+      -webkit-padding-before: calc(2.5rem + 2.25 * (100vw - 20rem) / 55);
+              padding-block-start: calc(2.5rem + 2.25 * (100vw - 20rem) / 55);
+    }
+  }
+}
+@media (max-width: 20em) {
+  .portfolio {
+    -webkit-padding-before: 2.5rem;
+            padding-block-start: 2.5rem;
+  }
+}
+@media (min-width: 75em) {
+  .portfolio {
+    -webkit-padding-after: 5.8125rem;
+            padding-block-end: 5.8125rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 75em) {
+  @supports (padding-block-end: clamp( 2.5rem , 1.2954545455rem  +  6.0227272727vw , 5.8125rem )) {
+    .portfolio {
+      -webkit-padding-after: clamp( 2.5rem , 1.2954545455rem  +  6.0227272727vw , 5.8125rem );
+              padding-block-end: clamp( 2.5rem , 1.2954545455rem  +  6.0227272727vw , 5.8125rem );
+    }
+  }
+  @supports not (padding-block-end: clamp( 2.5rem , 1.2954545455rem  +  6.0227272727vw , 5.8125rem )) {
+    .portfolio {
+      -webkit-padding-after: calc(2.5rem + 3.3125 * (100vw - 20rem) / 55);
+              padding-block-end: calc(2.5rem + 3.3125 * (100vw - 20rem) / 55);
+    }
+  }
+}
+@media (max-width: 20em) {
+  .portfolio {
+    -webkit-padding-after: 2.5rem;
+            padding-block-end: 2.5rem;
+  }
+}
+.portfolio__container:not(:last-child) {
+  -webkit-margin-after: 2.5rem;
+          margin-block-end: 2.5rem;
+}
+@media (min-width: 62rem) {
+  .portfolio__container:not(:last-child) {
+    -webkit-margin-after: 6.6875rem;
+            margin-block-end: 6.6875rem;
+  }
+}
+.portfolio__header {
+  text-align: end;
+}
+.portfolio__header:not(:last-child) {
+  -webkit-margin-after: 2rem;
+          margin-block-end: 2rem;
+}
+@media (min-width: 62rem) {
+  .portfolio__header:not(:last-child) {
+    -webkit-margin-after: 3.5rem;
+            margin-block-end: 3.5rem;
+  }
+}
+.portfolio__collection {
+  height: 44.0625rem;
+  overflow-x: auto;
+  scrollbar-color: #898d92 #0d0f11;
+  scrollbar-width: thin;
+}
+.portfolio__collection-content {
+  margin: 0 auto;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  max-height: 100%;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: minmax(14.875rem, 18.8125rem);
+  grid-auto-columns: minmax(14.875rem, 18.8125rem);
+  grid-template-rows: repeat(3, minmax(11.125rem, 33%));
+  grid-auto-flow: column dense;
+}
+.portfolio__collection-item {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: top;
+     object-position: top;
+}
+
+.filter-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  gap: 0.3125rem 1.5625rem;
+}
+@media (min-width: 62rem) {
+  .filter-form {
+    gap: 0.625rem 4.3125rem;
+  }
+}
+.filter-form__label {
+  position: relative;
+  font-family: "Cormorant", serif;
+  font-size: 1.875rem;
+  font-weight: 500;
+  line-height: 1.6;
+}
+.filter-form__label:has(:checked) {
+  color: #ffffff;
+  text-shadow: 0 0 0.125rem #ffffff;
+}
+.filter-form__checkbox {
+  border: 0;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  width: 1px;
 }
