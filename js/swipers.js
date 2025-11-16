@@ -24,4 +24,20 @@ window.addEventListener("load", () => {
         },
       },
     });
+  
+  const testimonialsSwiper = new Swiper(".testimonials__swiper.swiper", {
+    speed: 2000,
+    grabCursor: true,
+    breakpoints: {
+      // when window width is >= 320px
+      320: {
+        slidesPerView: 1,
+        spaceBetween: 10,
+      },
+      480: {
+        slidesPerView: "auto",
+        spaceBetween: 18.5,
+      },
+    },
+  });
 })
