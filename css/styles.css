@@ -1214,3 +1214,60 @@ body {
   inset-inline-start: 0;
   width: 1px;
 }
+
+.advantages__container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 1.25rem;
+}
+.advantages__header {
+  max-width: 22.9375rem;
+}
+.advantages__header > *:not(:last-child) {
+  -webkit-margin-after: 1.5rem;
+          margin-block-end: 1.5rem;
+}
+.benefit {
+  -webkit-padding-before: 1.9375rem;
+          padding-block-start: 1.9375rem;
+  padding-inline: 1.8125rem;
+  -webkit-padding-after: 1.875rem;
+          padding-block-end: 1.875rem;
+  line-height: 1.6;
+  -webkit-transition: color 0.4s ease-out;
+  transition: color 0.4s ease-out;
+}
+.benefit > *:not(:last-child) {
+  -webkit-margin-after: 0.625rem;
+          margin-block-end: 0.625rem;
+}
+.benefit__icon {
+  width: 1.875rem;
+  height: 1.875rem;
+  -webkit-transition: -webkit-filter 0.3s ease-out;
+  transition: -webkit-filter 0.3s ease-out;
+  transition: filter 0.3s ease-out;
+  transition: filter 0.3s ease-out, -webkit-filter 0.3s ease-out;
+}
+.benefit__title {
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+.benefit__text {
+  max-width: 14.4375rem;
+  font-weight: 300;
+}
+@media (any-hover: hover) {
+  .benefit:hover {
+    color: #ffffff;
+  }
+  .benefit:hover img {
+    -webkit-filter: invert(1) brightness(5);
+            filter: invert(1) brightness(5);
+  }
+}
