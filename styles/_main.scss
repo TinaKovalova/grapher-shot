@@ -470,33 +470,61 @@
 
     &__container {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        flex-wrap: wrap;
-        justify-content: space-between;
-        gap: toRem(20);
+        grid-template-columns: repeat(auto-fill, minmax(toRem(231), 1fr));
+        gap: toRem(10) toRem(30);
+        @media (max-width: toEm(991.98)) {
+            & > *:nth-child(2) {
+                grid-column-start: 1;
+            }
+        }
+        @media (min-width: toEm(992)) {
+            grid-template-columns: auto 1fr auto;
+            row-gap: toRem(50);
+            & > *:nth-child(3n + 2) {
+                justify-self: center;
+            }
+        }
     }
 
     // .advantages__header
 
     &__header {
-        max-width: toRem(367);
         & > *:not(:last-child) {
             margin-block-end: toRem(24);
+        }
+        @media (min-width: toEm(510.98)) and (max-width: toEm(991.98)) {
+            grid-column: span 2;
+        }
+        @media (min-width: toEm(992)) {
+            max-width: toRem(367);
         }
     }
 
     // .advantages__benefit
 
     &__benefit {
+        @media (min-width: toEm(768)) {
+            max-width: toRem(231);
+        }
     }
 }
 
 .benefit {
-    padding-block-start: toRem(31);
-    padding-inline: toRem(29);
-    padding-block-end: toRem(30);
+    @include adaptiveValue("padding-block-start", 24, 10); // padding-inline: toRem(29);
+    padding-block-end: toRem(15);
     line-height: 1.6;
     transition: color 0.4s ease-out;
+    position: relative;
+    &::after {
+        content: "";
+        position: absolute;
+        width: calc(100% + 58px);
+        height: 100%;
+        inset-inline-start: toRem(-29);
+        inset-block-start: 0;
+        border: toRem(3) solid transparent;
+        transition: border-color 0.4s ease-out;
+    }
     & > *:not(:last-child) {
         margin-block-end: toRem(10);
     }
@@ -519,12 +547,20 @@
     // .benefit__text
 
     &__text {
-        max-width: toRem(231);
         font-weight: 300;
+        @media (min-width: toEm(992)) {
+            padding-inline-end: toRem(15);
+        }
+    }
+    @media (min-width: toEm(992)) {
+        padding-block-end: toRem(30);
     }
     @media (any-hover: hover) {
         &:hover {
             color: #ffffff;
+            &::after {
+                border-color: $brandColor-100;
+            }
             img {
                 filter: invert(1) brightness(5);
             }
