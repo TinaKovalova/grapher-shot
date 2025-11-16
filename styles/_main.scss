@@ -378,6 +378,37 @@
         overflow-x: auto;
         scrollbar-color: $mainTextColor $backgroundColor;
         scrollbar-width: thin;
+        position: relative;
+    }
+    &__collection-button {
+        position: absolute;
+        inset-block-end: toRem(76);
+        inset-inline-start: 50%;
+        transform: translateX(-50%);
+        text-transform: inherit;
+        color: #ffffff;
+
+        @include adaptiveValue("font-size", 39, 24);
+        padding-inline: toRem(25);
+        padding-block-start: toRem(3);
+        padding-block-end: toRem(5);
+        background: rgba(102, 102, 102, 0.21);
+        backdrop-filter: blur(4px);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: toRem(6);
+        &::after {
+            content: "";
+            width: toRem(81);
+            height: toRem(16);
+            background: url("../images/icons/arrow-long-white.svg") center/contain no-repeat;
+            // transform: rotate(-90deg);
+        }
+        @media (min-width: toRem(539)) {
+            inset-inline-start: toRem(162);
+            transform: translateX(0);
+        }
     }
     &__collection-content {
         margin: 0 auto;
@@ -385,7 +416,7 @@
         max-height: 100%;
         display: grid;
         gap: toRem(16);
-        grid-template-columns: minmax(toRem(238), toRem(301));
+        grid-template-columns: minmax(toRem(238), toRem(301)) minmax(toRem(291), toRem(301));
         grid-auto-columns: minmax(toRem(238), toRem(301));
         grid-template-rows: repeat(3, minmax(toRem(178), 33%));
         grid-auto-flow: column dense;
