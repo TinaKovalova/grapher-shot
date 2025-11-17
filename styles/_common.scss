@@ -5,6 +5,7 @@
     border: toRem(1) solid transparent;
     transition-timing-function: ease-out;
     transition-duration: 0.4s;
+    text-transform: capitalize;
 }
 .social {
     display: flex;

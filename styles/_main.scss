@@ -657,3 +657,184 @@
         line-height: 1.8;
     }
 }
+.pricelist {
+    @include adaptiveValue("padding-block-start", 75, 40);
+    padding-block-end: toRem(52);
+    // .pricelist__container
+
+    &__container {
+        &:not(:last-child) {
+            @include adaptiveValue("margin-block-end", 81, 40);
+        }
+    }
+
+    // .pricelist__swiper
+
+    &__swiper {
+        &.swiper {
+            // width: toRem($maxWidth);
+            padding-block-end: toRem(85);
+        }
+        .swiper-wrapper {
+            align-items: flex-end;
+            @media (min-width: toEm(540)) {
+                min-width: toRem(508);
+            }
+        }
+        .swiper-slide {
+            max-width: calc(100vw - 20px);
+            @media (min-width: toEm(540)) {
+                width: toRem(492);
+            }
+
+            &.swiper-slide-active {
+                @media (min-width: toEm(540)) {
+                    width: toRem(508);
+                }
+
+                .price-card {
+                    border-color: $brandColor-100;
+                }
+                .price-card__title {
+                    // font-size: toRem(30);
+                    @media (min-width: toEm(540)) {
+                        font-size: toRem(36);
+                    }
+                }
+                .price-card__price {
+                    // font-size: toRem(40);
+                    @media (min-width: toEm(540)) {
+                        font-size: toRem(40);
+                    }
+                }
+                .price-card__details-list {
+                    // font-size: toRem(16);
+
+                    @media (min-width: toEm(540)) {
+                        font-size: toRem(26);
+                        letter-spacing: toRem(0.52);
+                    }
+                }
+                .button {
+                    // font-size: toRem(20);
+                    @media (min-width: toEm(540)) {
+                        font-size: toRem(30);
+                    }
+                }
+            }
+        }
+        .swiper-pagination {
+            .swiper-pagination-bullet {
+                width: toRem(18);
+                height: toRem(18);
+                background-color: rgba(255, 255, 255, 0.37);
+            }
+            .swiper-pagination-bullet-active {
+                background-color: $brandColor-100;
+            }
+        }
+    }
+}
+
+.price-card {
+    padding-block: toRem(15);
+    padding-inline: toRem(22);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: toRem(45);
+    border: toRem(6) solid transparent;
+    background: rgba(95, 93, 93, 0.12);
+    backdrop-filter: blur(toRem(5));
+    color: #ffffff;
+    will-change: border-color;
+    transition: border-color 0.5s ease-out;
+    @media (min-width: toEm(480)) {
+        padding-block: toRem(20);
+        padding-inline: toRem(40);
+        row-gap: toRem(63);
+    }
+    @media (min-width: toEm(640)) {
+        padding-block: toRem(30);
+        padding-inline: toRem(57);
+    }
+
+    // .price-card__title
+
+    &__title {
+        font-size: toRem(30);
+        font-weight: 500;
+        text-transform: uppercase;
+        @media (min-width: toEm(540)) {
+            font-size: toRem(32);
+        }
+    }
+
+    // .price-card__price
+
+    &__price {
+        font-family: "Cormorant", serif;
+        font-size: toRem(36);
+        @media (min-width: toEm(540)) {
+            font-size: toRem(36);
+        }
+    }
+
+    // .price-card__details-list
+
+    &__details-list {
+        flex-grow: 1;
+        min-width: 100%;
+        display: flex;
+        flex-direction: column;
+        row-gap: toRem(35);
+        font-size: toRem(16);
+        font-weight: 600;
+        letter-spacing: toRem(0.44);
+        @media (min-width: toEm(425)) {
+            font-size: toRem(20);
+        }
+        @media (min-width: toEm(540)) {
+            row-gap: toRem(63);
+            font-size: toRem(22);
+        }
+    }
+
+    // .price-card__details-item
+
+    &__details-item {
+        display: flex;
+        justify-content: space-between;
+        column-gap: toRem(15);
+    }
+
+    & .button {
+        font-size: toRem(18);
+        font-weight: 500;
+        letter-spacing: toRem(0.52);
+        border-color: #ffffff;
+        padding-block: toRem(26);
+        padding-inline: toRem(19);
+        will-change: background-color;
+        transition-property: background-color;
+        @media (min-width: toEm(425)) {
+            font-size: toRem(20);
+        }
+        @media (min-width: toEm(540)) {
+            font-size: toRem(26);
+        }
+        @media (any-hover: hover) {
+            &:hover {
+                background-color: $brandColor-100;
+            }
+        }
+    }
+
+    .price-card__title,
+    .price-card__price,
+    .price-card__details-list,
+    & .button {
+        will-change: font-size;
+        transition: font-size 0.5s ease-out;
+    }
+}
