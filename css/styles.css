@@ -1609,26 +1609,33 @@ body {
   }
 }
 .pricelist__swiper.swiper {
-  -webkit-padding-after: 5.3125rem;
-          padding-block-end: 5.3125rem;
+  -webkit-padding-after: 3.4375rem;
+          padding-block-end: 3.4375rem;
 }
-.pricelist__swiper .swiper-wrapper {
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+@media (min-width: 33.75em) {
+  .pricelist__swiper.swiper {
+    -webkit-padding-after: 5.3125rem;
+            padding-block-end: 5.3125rem;
+  }
 }
 @media (min-width: 33.75em) {
   .pricelist__swiper .swiper-wrapper {
     min-width: 31.75rem;
+    min-height: 42.75rem;
   }
 }
 .pricelist__swiper .swiper-slide {
-  max-width: calc(100vw - 20px);
+  -ms-flex-item-align: end;
+      align-self: flex-end;
 }
 @media (min-width: 33.75em) {
   .pricelist__swiper .swiper-slide {
     width: 30.75rem;
   }
+}
+.pricelist__swiper .swiper-slide.swiper-slide-active {
+  -webkit-transition-delay: 0.5s;
+          transition-delay: 0.5s;
 }
 @media (min-width: 33.75em) {
   .pricelist__swiper .swiper-slide.swiper-slide-active {
@@ -1687,8 +1694,8 @@ body {
   backdrop-filter: blur(0.3125rem);
   color: #ffffff;
   will-change: border-color;
-  -webkit-transition: border-color 0.5s ease-out;
-  transition: border-color 0.5s ease-out;
+  -webkit-transition: border-color 0.5s ease-out, width 0.5s ease-out;
+  transition: border-color 0.5s ease-out, width 0.5s ease-out;
 }
 @media (min-width: 30em) {
   .price-card {
@@ -1716,6 +1723,8 @@ body {
 .price-card__price {
   font-family: "Cormorant", serif;
   font-size: 2.25rem;
+  -webkit-margin-before: -1.875rem;
+          margin-block-start: -1.875rem;
 }
 @media (min-width: 33.75em) {
   .price-card__price {

@@ -42,38 +42,35 @@ window.addEventListener("load", () => {
   });
 
    const pricelistSwiper = new Swiper(".pricelist__swiper.swiper", {
-     speed: 2000,
-     slidesPerView: "auto",
-      spaceBetween: 1,
-     //  loop: false,
-     // centeredSlides: true,
-     //  centerInsufficientSlides: true,
-
+     speed: 2500,
+     spaceBetween: 10,
      grabCursor: true,
-
      pagination: {
        el: ".swiper-pagination",
        clickable: true,
        type: "bullets",
+       dynamicBullets: true,
+       renderBullet: function (index, className) {
+         return '<span class="' + className + '">' + "</span>";
+       },
      },
 
      breakpoints: {
-       // when window width is >= 320px
        320: {
-         loop: true,
+         slidesPerView: 1,
          centeredSlides: true,
-         //  slidesPerView: 1,
        },
-       992: {
-         //  loop:true,
-         // slidesPerView: 2.5,
-         spaceBetween: 19,
+       768: {
+         slidesPerView: "auto",
+         initialSlide: 1,
+          centeredSlides: true,
        },
-       1600: {
-         loop: false,
+
+       1550: {
+         slidesPerView: "auto",
          centerInsufficientSlides: true,
          initialSlide: 1,
-         //  spaceBetween: 19,
+         spaceBetween: 19,
        },
      },
    });
