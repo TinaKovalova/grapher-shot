@@ -13,7 +13,7 @@
     <div class="wrapper">
         <header class="header">
             <div class="header__container">
-                <div class="header__logo">grapher shot.</div>
+                <div class="header__logo logo">grapher shot.</div>
                 <nav class="navigation">
                     <ul class="menu">
                         <li class="menu__item">
@@ -347,7 +347,7 @@
                     </div>
                 </div>
             </section>
-            <section class="pricelist">
+            <section class="pricelist" id="price">
                 <div class="pricelist__container">
                     <div class="pricelist__headder section-header">
                         <h2 class="section-header__title">pricelist</h2>
@@ -434,8 +434,67 @@
                     <div class="swiper-pagination"></div>
                 </div>
             </section>
+            <section class="subscription" id="contact">
+                <div class="subscription__container">
+                    <div class="subscription__body">
+                        <h2 class="subscription__title">
+                            Get more info other discount prices
+                        </h2>
+                        <form action="#" method="post" class="subscription__form subscription-form"
+                            name="subscription-form">
+                            <div class="subscription-form__row">
+                                <label for="user-email" class="subscription-form__label">
+                                    <input type="email" name="email" id="user-email" class="subscription-form__input"
+                                        placeholder="enter your email address" autocomplete="true">
+                                </label>
+                                <button class="subscription-form__button button">submit</button>
+                            </div>
+                            <div class="subscription-form__policy-row">
+                                * By clicking <span>“Submit”</span> button, you agree to our Terms and that you have
+                                read our
+                                <a href="#" class="subscription-form__policy">Data Use Policy</a>.
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
         </main>
-        <footer class="footer"></footer>
+        <footer class="footer">
+            <div class="footer__container">
+                <a href="#" class="footer__logo logo">grapher shot.</a>
+                <ul class="footer__social social">
+                    <li class="social__item">
+                        <a href="#" class="social__link">
+                            <svg class="social__link-icon">
+                                <use href="images/icons/icons.svg#icon-twitter"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="social__item">
+                        <a href="#" class="social__link">
+                            <svg class="social__link-icon">
+                                <use href="images/icons/icons.svg#icon-google"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="social__item">
+                        <a href="#" class="social__link">
+                            <svg class="social__link-icon">
+                                <use href="images/icons/icons.svg#icon-facebook"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="social__item">
+                        <a href="#" class="social__link">
+                            <svg class="social__link-icon">
+                                <use href="images/icons/icons.svg#icon-linkedin"></use>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+                <div class="footer__copyright">(C) Copyright 2022 | Photographer</div>
+            </div>
+        </footer>
 
     </div>
     <script src="js/index.js"></script>

@@ -1,22 +1,22 @@
 //Percent
 @function toPercent($px, $from: 100) {
-    $result: math.div($px, $from) * 100%;
-    @return $result;
+	$result: math.div($px, $from) * 100%;
+	@return $result;
 }
 //VW
 @function toVW($px, $from: 100) {
-    $result: math.div($px, $from) * 100vw;
-    @return $result;
+	$result: math.div($px, $from) * 100vw;
+	@return $result;
 }
 //REM
 @function toRem($px, $current: 16) {
-    $result: math.div($px, $current) + rem;
-    @return $result;
+	$result: math.div($px, $current) + rem;
+	@return $result;
 }
 //EM
 @function toEm($px, $current: 16) {
-    $result: math.div($px, $current) + em;
-    @return $result;
+	$result: math.div($px, $current) + em;
+	@return $result;
 }
 // Адаптивна властивість (clamp)
 @mixin adaptiveValue($property, $startSize, $minSize, $keepSize: 0, $widthFrom: $containerWidth, $widthTo: $minWidth) {
@@ -68,13 +68,23 @@
 		}
 		// Якщо не підтримується clamp();
 		@supports not (#{$property}: $propertyValue) {
-			#{$property}: calc(#{toRem($minSize)} + #{$addSize} * (100vw - #{toRem($widthTo)}) / #{math.div($widthFrom, 16) - math.div($widthTo, 16)});
+			#{$property}: calc(
+				#{toRem($minSize)} + #{$addSize} * (100vw - #{toRem($widthTo)}) /
+					#{math.div($widthFrom, 16) - math.div($widthTo, 16)}
+			);
 		}
 	}
 	@if $keepSize != 1 and $keepSize != 2 {
 		@media (max-width: $widthToMedia) {
 			#{$property}: toRem($minSize);
 		}
+	}
+}
+
+@mixin scroll-margin-top {
+	scroll-margin-block-start: toRem(58);
+	@media (min-width: toEm(992)) {
+		scroll-margin-block-start: toRem(98);
 	}
 }
 

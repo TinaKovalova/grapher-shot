@@ -30,23 +30,8 @@
             padding-block: toRem(36);
         }
     }
-
-    // .header__logo
-
-    &__logo {
-        font-size: toRem(26);
-        font-weight: 700;
-        letter-spacing: toRem(3.57);
-        text-transform: uppercase;
-        color: #dcdbdb;
-
-        position: relative;
-        z-index: 100;
-        @media (min-width: toEm(992)) {
-            flex-shrink: 0;
-        }
-    }
 }
+
 .navigation {
     @media (max-width: toEm(479.98)) {
         min-width: 100%;

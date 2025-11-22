@@ -44,10 +44,11 @@ window.addEventListener("load", () => {
    const pricelistSwiper = new Swiper(".pricelist__swiper.swiper", {
      speed: 2000,
      slidesPerView: "auto",
-     //  centeredSlides: true,
-     centerInsufficientSlides: true,
-     spaceBetween: 19,
-     initialSlide: 1,
+      spaceBetween: 1,
+     //  loop: false,
+     // centeredSlides: true,
+     //  centerInsufficientSlides: true,
+
      grabCursor: true,
 
      pagination: {
@@ -59,18 +60,20 @@ window.addEventListener("load", () => {
      breakpoints: {
        // when window width is >= 320px
        320: {
-        //  loop: true,
-        //  centeredSlides: true,
+         loop: true,
+         centeredSlides: true,
          //  slidesPerView: 1,
-         //  spaceBetween: 10,
        },
-       480: {
+       992: {
          //  loop:true,
          // slidesPerView: 2.5,
+         spaceBetween: 19,
        },
-       1430: {
+       1600: {
          loop: false,
          centerInsufficientSlides: true,
+         initialSlide: 1,
+         //  spaceBetween: 19,
        },
      },
    });

@@ -1,3 +1,15 @@
+.logo {
+    font-size: toRem(26);
+    font-weight: 700;
+    letter-spacing: toRem(3.57);
+    text-transform: uppercase;
+    color: #dcdbdb;
+    position: relative;
+    z-index: 100;
+    @media (min-width: toEm(992)) {
+        flex-shrink: 0;
+    }
+}
 .button {
     font-weight: 500;
     padding-inline: toRem(15);
@@ -28,7 +40,7 @@
         width: toRem(30);
         height: toRem(26);
         fill: $brandColor-100;
-        transition: fill 0.4s ease-out;
+        transition: fill 0.3s ease-out;
     }
 }
 .section-header {

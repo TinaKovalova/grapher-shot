@@ -189,10 +189,7 @@
 }
 
 .about {
-    scroll-margin-block-start: toRem(58);
-    @media (min-width: toEm(992)) {
-        scroll-margin-block-start: toRem(98);
-    }
+    @include scroll-margin-top;
     // .about__container
 
     &__container {
@@ -342,6 +339,7 @@
 }
 
 .portfolio {
+    @include scroll-margin-top;
     @include adaptiveValue("padding-block-start", 76, 40);
     @include adaptiveValue("padding-block-end", 93, 40);
     // .portfolio__container
@@ -658,8 +656,10 @@
     }
 }
 .pricelist {
+    @include scroll-margin-top;
     @include adaptiveValue("padding-block-start", 75, 40);
     padding-block-end: toRem(52);
+    background: url("../images/pricelist/pricelist.jpg") center/cover no-repeat;
     // .pricelist__container
 
     &__container {
@@ -836,5 +836,138 @@
     & .button {
         will-change: font-size;
         transition: font-size 0.5s ease-out;
+    }
+}
+.subscription {
+    // .subscription__container
+
+    &__container {
+        @include adaptiveValue("padding-block-start", 121, 40);
+    }
+
+    // .subscription__body
+
+    &__body {
+        margin: 0 auto;
+        width: calc(100% - 25px);
+        background-color: $brandColor-100;
+        @include adaptiveValue("padding-block-start", 66, 40);
+        @include adaptiveValue("padding-block-end", 106, 50);
+        padding-inline: toRem(15);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        @include adaptiveValue("row-gap", 88, 40);
+        // transform: translateY(18.18%);
+        @media (min-width: toEm(992)) {
+            width: calc(100% - 98px);
+            padding-inline: toRem(30);
+        }
+    }
+
+    // .subscription__title
+
+    &__title {
+        font-family: "Cormorant", serif;
+        max-width: toRem(566);
+        @include adaptiveValue("font-size", 67, 30);
+        text-align: center;
+        color: #ffffff;
+    }
+}
+.subscription-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: inherit;
+
+    // .subscription-form__row
+
+    &__row {
+        width: 78%; /* 702/900 */
+        max-width: toRem(702);
+        display: flex;
+        gap: toRem(15);
+        background-color: #ffffff;
+        padding: toRem(8);
+        font-size: toRem(20);
+        @media (max-width: toEm(767.98)) {
+            flex-wrap: wrap;
+            width: 100%;
+        }
+        @media (min-width: toEm(992)) {
+            font-size: toRem(26);
+        }
+    }
+
+    // .subscription-form__label
+
+    &__label {
+        flex-grow: 1;
+    }
+
+    // .subscription-form__input
+
+    &__input {
+        padding-block: 0.85em;
+        &::placeholder {
+            font-family: "Cormorant", serif;
+            text-transform: capitalize;
+        }
+        @media (min-width: toEm(992)) {
+            padding-inline-start: toRem(26);
+        }
+    }
+
+    // .subscription-form__button
+
+    &__button {
+        padding-inline: toRem(35);
+        padding-block: toRem(17);
+        background-color: $brandColor-100;
+        transition: background-color 0.4s ease-out;
+        @media (max-width: toEm(767.98)) {
+            flex-grow: 1;
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                background-color: $brandColor;
+            }
+        }
+    }
+
+    &__policy-row {
+        max-width: toRem(900);
+        // font-size: toRem(16);
+        text-align: center;
+        text-transform: none;
+        span {
+            font-weight: 600;
+        }
+        @media (min-width: toEm(992)) {
+            font-size: toRem(20);
+        }
+    }
+    // .subscription-form__policy
+
+    &__policy {
+        font-weight: 500;
+        text-decoration: underline;
+        text-decoration-color: transparent;
+        text-decoration-thickness: toRem(0.5);
+        transition: text-decoration-color 0.4s ease-out;
+        @media (any-hover: hover) {
+            &:hover {
+                text-decoration-color: #ffffff;
+            }
+        }
+    }
+    &__policy-row span,
+    &__policy,
+    &__button {
+        color: #ffffff;
     }
 }

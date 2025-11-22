@@ -1,0 +1,46 @@
+.footer {
+    background-color: $brandColor;
+    padding-block-start: toRem(116);
+    margin-block-start: toRem(-116);
+    // .footer__continer
+
+    &__container {
+        @include adaptiveValue("padding-block-start", 124, 62);
+        @include adaptiveValue("padding-block-end", 48, 30);
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: toRem(52);
+        @include adaptiveValue("row-gap", 119, 50);
+        justify-content: space-between;
+        @media (max-width: toEm(797.98)) {
+            flex-direction: column;
+        }
+    }
+
+    // .footer__logo
+
+    &__logo {
+        text-align: center;
+    }
+    &__social {
+        gap: toRem(20) toRem(52);
+        justify-content: center;
+        flex-wrap: wrap;
+        & .social__link-icon {
+            width: toRem(28);
+            height: toRem(28);
+            fill: #ffffff;
+            @media (any-hover: hover) {
+                &:hover {
+                    fill: $mainTextColor;
+                }
+            }
+        }
+    }
+    // .footer__copyright
+
+    &__copyright {
+        min-width: 100%;
+        text-align: center;
+    }
+}
